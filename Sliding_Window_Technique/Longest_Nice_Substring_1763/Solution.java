@@ -12,33 +12,35 @@ Output: "aAa"
 Explanation: "aAa" is a nice string because 'A/a' is the only letter of the alphabet in s, and both 'A' and 'a' appear.
 "aAa" is the longest nice substring.
 ------------------------------------------------------------------------------------- */
+
+
 import java.util.HashSet;
 import java.util.Set;
 
 class Solution {
     public static String longestNiceSubstring(String s) {
         if (s.length() < 2) return ""; // Base case: cannot be nice if only 1 char
-
         Set<Character> set = new HashSet<>();
         for (char c : s.toCharArray()) {
             set.add(c);
         }
 
-        // check each character
+        // check each character in the string
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (!(set.contains(Character.toLowerCase(c)) &&
                   set.contains(Character.toUpperCase(c)))) {
-                
-                // split into two substrings and recurse
                 String left = longestNiceSubstring(s.substring(0, i));
                 String right = longestNiceSubstring(s.substring(i + 1));
-
-                // return whichever is longer
                 return left.length() >= right.length() ? left : right;
             }
         }
-        return s; // if all chars satisfy the nice condition
+        return s;
     }
 
+    public static void main(String[] args) {
+        String input = "aAaBfgbbBbBB";
+        System.out.println("Input: " + input);
+        System.out.println("Longest Nice Substring: " + longestNiceSubstring(input));
+    }
 }
