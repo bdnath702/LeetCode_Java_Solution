@@ -9,7 +9,7 @@ This repository contains my personal Java solutions to various LeetCode problems
 ## 🧠 Features
 
 - ✅ Clean and readable Java code.
-- 🗂️ Organized folder structure by topic and problem number
+- 🗂️ Organized folder structure by topic and problem number.
 - 🧪 Focused on problem-solving, optimization, and learning
 - 💬 May include inline comments for clarity and better understanding
 - 🚀 Continuously updated as I solve more problems.
